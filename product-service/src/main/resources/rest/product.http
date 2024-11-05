@@ -1,0 +1,14 @@
+POST localhost:8080/api/product
+Content-Type: application/json
+
+{
+  "name": "Console X-Box Series X",
+  "description": "lorem lorem",
+  "price": 3700.00
+}
+###
+
+GET localhost:8080/api/product
+Content-Type: application/json
+###
+

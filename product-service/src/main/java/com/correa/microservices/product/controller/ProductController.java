@@ -6,7 +6,10 @@ import com.correa.microservices.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,5 +22,11 @@ public class ProductController {
     @ResponseStatus(CREATED)
     public ProductResponse createProduct(@RequestBody ProductRequest request) {
         return service.create(request);
+    }
+
+    @GetMapping
+    @ResponseStatus(OK)
+    public List<ProductResponse> getProducts() {
+        return service.getAll();
     }
 }
